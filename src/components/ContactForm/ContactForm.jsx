@@ -1,10 +1,11 @@
 import { useDispatch } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { addContact } from "../../redux/contactsSlice";
-import { nanoid } from "nanoid";
+import { addContact } from "../../redux/contactsOps";
+
 import * as Yup from "yup";
 import c from "./ContactForm.module.css";
 import { FaPen } from "react-icons/fa";
+import { useCallback } from "react";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
@@ -19,10 +20,13 @@ const validationSchema = Yup.object().shape({
 const ContactForm = () => {
   const dispatch = useDispatch();
 
-  const handleSubmit = (values, { resetForm }) => {
-    dispatch(addContact({ ...values, id: nanoid() }));
-    resetForm();
-  };
+  const handleSubmit = useCallback(
+    (values, { resetForm }) => {
+      dispatch(addContact(values));
+      resetForm();
+    },
+    [dispatch]
+  );
 
   return (
     <Formik
