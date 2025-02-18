@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  color: #212878;
 }
 
 .inputWrapper {
@@ -15,7 +16,7 @@
 .inputWrapper .icon {
   position: absolute;
   left: 20px;
-  color: #888;
+  color: #484c7e;
   font-size: 1rem;
   transition: color 0.3s ease;
 }

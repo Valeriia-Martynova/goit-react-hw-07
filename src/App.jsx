@@ -7,6 +7,8 @@ import { selectError, selectIsLoading } from "./redux/selectors";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "./components/Loader/Loader";
+import { FaAddressBook } from "react-icons/fa";
+import { RiContactsLine } from "react-icons/ri";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -19,9 +21,15 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Phonebook</h1>
+      <h1>
+        <FaAddressBook />
+        Phonebook
+      </h1>
       <ContactForm />
-      <h2>Contacts</h2>
+      <h2>
+        <RiContactsLine />
+        Contacts
+      </h2>
       <SearchBox />
       {isLoading && !error && <Loader />}
       <ContactList />

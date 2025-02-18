@@ -2,6 +2,7 @@ label {
   display: block;
   text-align: start;
   font-weight: 500;
+  color: #212878;
 }
 
 .inputContainer {
@@ -19,14 +20,14 @@ label {
 .inputWrapper .icon {
   position: absolute;
   left: 20px;
-  color: #888;
+  color: #484c7e;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
 
 input[type="text"] {
   flex-grow: 1;
-  padding: 10px 40px;
+  padding: 10px 10px 10px 40px;
   border: 1px solid #ddd;
   border-radius: 5px;
   transition: border-color 0.3s ease;
@@ -45,7 +46,7 @@ input[type="text"]:focus {
 
 .btnForm {
   margin-top: 10px;
-  width: 100%;
+  width: 200px;
   padding: 10px;
   border: none;
   border-radius: 5px;
